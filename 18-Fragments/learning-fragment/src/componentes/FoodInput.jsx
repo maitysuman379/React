@@ -1,9 +1,9 @@
 import styles from './FoodInput.module.css'
 
-const FoodInput = ({handleOnChange}) =>{
+const FoodInput = ({handleOnKeyDown}) =>{
     return (
         <>
-          <input type="text" placeholder="Ex-Rice" onChange={handleOnChange} className={`${styles.inputCss} form-control`} />
+          <input type="text" placeholder="Ex-Rice" onKeyDown={handleOnKeyDown} className={`${styles.inputCss} form-control`}/>
         </>
     );
 }
