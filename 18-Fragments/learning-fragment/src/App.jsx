@@ -1,10 +1,4 @@
-import './App.css';
-import Container from './componentes/Container';
-import "bootstrap/dist/css/bootstrap.min.css";
-import FoodItems from './componentes/FoodItems';
-import ErrorMessage from './componentes/ErrorMessage';
-import FoodInput from './componentes/FoodInput';
-import { useState } from 'react';
+
 
 function App() {
 
