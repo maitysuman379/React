@@ -1,0 +1,14 @@
+.licss{
+    border: 2px solid aqua !important;
+    margin: 5px;
+    border-radius:10px !important;
+}
+
+.spancss{
+    color: maroon !important;
+    font-weight: 600;
+}
+
+.buttonCss{
+    float: right;
+}

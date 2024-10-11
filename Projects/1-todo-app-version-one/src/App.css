@@ -1,0 +1,24 @@
+h1{
+    background-color: aqua;
+    font-weight: 700 !important;
+    font-size: 40px !important;
+    margin: 10px !important;
+    margin-bottom: 20px !important;
+    border-radius: 10px;
+}
+
+input{
+    width: 100%;
+}
+
+.items-container{
+    text-align: left;
+}
+
+.kg-btn{
+    min-width: 80px;
+}
+
+.kg-row{
+    margin: 10px 5px !important;
+}
