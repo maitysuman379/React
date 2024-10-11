@@ -6,14 +6,20 @@ import ErrorMessage from './componentes/ErrorMessage';
 import FoodInput from './componentes/FoodInput';
 
 function App() {
-  let foodItems = ['dal', 'ruti', 'salad', 'milk', 'green vegitable', 'ghee', 'suman'];
+  let foodItems = ['dal', 'ruti', 'salad', 'milk', 'green vegitable', 'ghee', 'biscuit'];
   // let foodItems = [];
+  let data = '';
+  const handleOnChange = (event) =>{
+    data = event.target.value;
+    console.log(data);
+  }
   return (
     <>
       <Container>
         <h1>Healty Food</h1>
         <ErrorMessage foodItems={foodItems} />
-        <FoodInput/>
+        <FoodInput handleOnChange={handleOnChange}/>
+        <p>{data}</p>
         <FoodItems foodItems={foodItems} />
       </Container>
 
