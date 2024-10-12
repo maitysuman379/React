@@ -9,26 +9,18 @@ import "./App.css"
 
 function App() {
 
-  // let initialTodoItem = [
-  //   {
-  //     name: "Milk",
-  //     date: "10/04/2023",
-  //   },
-  //   {
-  //     name: "Water",
-  //     date: "10/04/2023",
-  //   },
-  //   {
-  //     name: "Suman",
-  //     date: "09/02/2004",
-  //   }
-  // ];
-
   let [TodoItem, setTodoItem] = useState([]);
 
   const handleOnClick = (itemName, itemData) =>{
     const newTodoItems = [...TodoItem, {name: itemName, date: itemData}];
     setTodoItem(newTodoItems);
+  }
+
+  const handelDeleteItem = (item) =>{
+    let newDeleteItem = [...TodoItem];
+    let finalItem = newDeleteItem.filter((del)=>del.name !== item.name);
+    console.log(finalItem)
+    setTodoItem(finalItem);
   }
 
   return (
@@ -37,7 +29,7 @@ function App() {
         <AppName />
         <AddTodo handleOnClick={handleOnClick}/>
         <WelcomeMessage TodoItem={TodoItem}/>
-        <TodoItems TodoItems={TodoItem}/>
+        <TodoItems TodoItems={TodoItem} handelDeleteItem={handelDeleteItem}/>
       </center>
     </>
   );

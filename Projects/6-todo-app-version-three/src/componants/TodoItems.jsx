@@ -1,12 +1,12 @@
 import TodoItem from "./TodoItem";
 import styles from "./TodoItems.module.css";
 
-const TodoItems = ({ TodoItems }) => {
+const TodoItems = ({ TodoItems, handelDeleteItem}) => {
     return (
         <>
             <div className={`${styles.itemsContainer} items-container`} >
                 {TodoItems.map((item)=>
-                   <TodoItem key={item.name} todoDate={item.date} todoName={item.name}/>
+                   <TodoItem handelDeleteItem={handelDeleteItem} key={item.name} todoDate={item.date} item={item} todoName={item.name}/>
                 )}
             </div>
         </>
