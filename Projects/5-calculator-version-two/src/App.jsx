@@ -7,10 +7,23 @@ function App() {
 
   let [calVal, setCalVal] = useState("");
 
+  const onClick = (btnVal) =>{
+    if(btnVal === "C"){
+      calVal = '';
+      setCalVal(calVal);
+    }else if(btnVal === "="){
+      const result = eval(calVal);
+      setCalVal(result);
+    }else{
+      const newVal = calVal + btnVal;
+      setCalVal(newVal);
+    };
+  };
+
   return (
     <div className={`${styles.calculator}`}>
       <Display calVal={calVal}/>
-      <ButtonsContainer/>
+      <ButtonsContainer onClick={onClick}/>
     </div>
   )
 }
