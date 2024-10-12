@@ -36,7 +36,7 @@ function App() {
       <center className="todo-container">
         <AppName />
         <AddTodo handleOnClick={handleOnClick}/>
-        <WelcomeMessage TodoItems={TodoItems}/>
+        <WelcomeMessage TodoItem={TodoItem}/>
         <TodoItems TodoItems={TodoItem}/>
       </center>
     </>
