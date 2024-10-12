@@ -2,12 +2,13 @@ import { AppName } from "./componants/AppName";
 import { AddTodo } from "./componants/AddTodo";
 import TodoItems from "./componants/TodoItems";
 import "./App.css"
+import { useState } from "react";
 
 
 
 function App() {
 
-  const TodoItem = [
+  const initialTodoItem = [
     {
       name: "Milk",
       date: "10/04/2023",
@@ -21,6 +22,8 @@ function App() {
       date: "09/02/2004",
     }
   ];
+
+  let [TodoItem, setTodoItem] = useState(initialTodoItem);
 
   return (
     <>
