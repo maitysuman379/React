@@ -5,7 +5,8 @@ import { TodoItemContext } from "../store/todo-items-store";
 
 export function AddTodo() {
 
-  const handleOnClick = useContext(TodoItemContext);
+  const ContextObj = useContext(TodoItemContext);
+  const handleOnClick = ContextObj.handleOnClick;
 
   const todoNameElement = useRef();
   const todoDateElement = useRef();
@@ -16,7 +17,7 @@ export function AddTodo() {
     const todoDate = todoDateElement.current.value;
     todoNameElement.current.value = '';
     todoDateElement.current.value = '';
-    handleOnClick.handleOnClick(todoName,todoDate);
+    handleOnClick(todoName,todoDate);
   }
 
   (() => {

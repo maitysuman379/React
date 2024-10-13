@@ -4,8 +4,7 @@ import { TodoItemContext } from '../store/todo-items-store';
 
 const WelcomeMessage = () =>{
 
-    const ContextObj = useContext(TodoItemContext);
-    const TodoItem = ContextObj.TodoItem;
+    const {TodoItem} = useContext(TodoItemContext);
 
     return (
         <>

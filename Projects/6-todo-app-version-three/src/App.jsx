@@ -27,13 +27,13 @@ function App() {
 
   return (
     <TodoItemContext.Provider value={{
-      TodoItem: TodoItem,
-      handleOnClick: handleOnClick,
-      handelDeleteItem: handelDeleteItem,
+      TodoItem,
+      handleOnClick,
+      handelDeleteItem,
       }}>
       <center className="todo-container">
         <AppName />
-        <AddTodo handleOnClick={handleOnClick}/>
+        <AddTodo />
         <WelcomeMessage />
         <TodoItems />
       </center>
