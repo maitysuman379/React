@@ -1,16 +1,18 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import styles from "./AddTodo.module.css";
 import { MdLibraryAdd } from "react-icons/md";
 
 export function AddTodo({handleOnClick}) {
 
   const todoNameElement = useRef();
-  const tododateElement = useRef();
+  const todoDateElement = useRef();
 
   const handelAddData = (event) =>{
     event.preventDefault();
     const todoName = todoNameElement.current.value;
-    const todoDate = tododateElement.current.value;
+    const todoDate = todoDateElement.current.value;
+    todoNameElement.current.value = '';
+    todoDateElement.current.value = '';
     handleOnClick(todoName,todoDate);
   }
 
@@ -40,7 +42,7 @@ export function AddTodo({handleOnClick}) {
           </div>
 
           <div className="col-4">
-            <input type="date" ref={tododateElement} className={`${styles.inputCss} form-control`} required/>
+            <input type="date" ref={todoDateElement} className={`${styles.inputCss} form-control`} required/>
             <div className="invalid-feedback">Enter date</div>
           </div>
 
