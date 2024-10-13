@@ -19,7 +19,6 @@ function App() {
   const handelDeleteItem = (item) =>{
     let newDeleteItem = [...TodoItem];
     let finalItem = newDeleteItem.filter((del)=>del.name !== item.name);
-    console.log(finalItem)
     setTodoItem(finalItem);
   }
 
