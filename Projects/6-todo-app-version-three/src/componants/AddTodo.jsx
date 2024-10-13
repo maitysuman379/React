@@ -4,27 +4,14 @@ import { MdLibraryAdd } from "react-icons/md";
 
 export function AddTodo({handleOnClick}) {
 
-  let [todoName, setTodoName] = useState('');
-  let [todoDate, setTodeDate] = useState('');
-  const noOfUpdates = useRef(0);
-
-  const handleNameOnChange = (event) =>{
-    todoName = event.target.value;
-    setTodoName(todoName);
-    noOfUpdates.current += 1;
-  }
-
-  const handleOnDateChange = (event) =>{
-    todoDate = event.target.value;
-    setTodeDate(todoDate);
-    console.log(`${noOfUpdates.current}`);
-  }
+  const todoNameElement = useRef();
+  const tododateElement = useRef();
 
   const handelAddData = (event) =>{
-    handleOnClick(todoName,todoDate);
-    setTodeDate('');
-    setTodoName('');
     event.preventDefault();
+    const todoName = todoNameElement.current.value;
+    const todoDate = tododateElement.current.value;
+    handleOnClick(todoName,todoDate);
   }
 
   (() => {
@@ -48,12 +35,12 @@ export function AddTodo({handleOnClick}) {
         <div className="row kg-row">
 
           <div className="col-6">
-            <input type="text" placeholder="Enter todo here" className={`${styles.inputCss} form-control`} onChange={handleNameOnChange} value={todoName} required/>
+            <input type="text" ref={todoNameElement} placeholder="Enter todo here" className={`${styles.inputCss} form-control`} required/>
             <div className="invalid-feedback">Enter Taks</div>
           </div>
 
           <div className="col-4">
-            <input type="date" className={`${styles.inputCss} form-control`} onChange={handleOnDateChange} value={todoDate} required/>
+            <input type="date" ref={tododateElement} className={`${styles.inputCss} form-control`} required/>
             <div className="invalid-feedback">Enter date</div>
           </div>
 
