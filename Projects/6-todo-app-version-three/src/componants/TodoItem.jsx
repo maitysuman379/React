@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+import { TodoItemContext } from "../store/todo-items-store";
 
-function TodoItem({ handelDeleteItem, todoDate, todoName, item}) {
+function TodoItem({ todoName, todoDate, item}) {
 
+    const handelDeleteItem = useContext(TodoItemContext);
+    
     const handelOnClick = () =>{
-        handelDeleteItem(item);
+        handelDeleteItem.handelDeleteItem(item);
     }
 
     return (

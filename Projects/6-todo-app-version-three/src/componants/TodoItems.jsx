@@ -3,14 +3,14 @@ import TodoItem from "./TodoItem"
 import styles from "./TodoItems.module.css";
 import { TodoItemContext } from "../store/todo-items-store";
 
-const TodoItems = ({ handelDeleteItem}) => {
+const TodoItems = () => {
    
     const TodoItems = useContext(TodoItemContext);
 
     return (
             <div className={`${styles.itemsContainer} items-container`} >
-                {TodoItems.map((item)=>
-                   <TodoItem key={item.name} handelDeleteItem={handelDeleteItem} todoDate={item.date} todoName={item.name} item={item}/>
+                {TodoItems.TodoItem.map((item)=>
+                   <TodoItem key={item.name} todoDate={item.date} todoName={item.name} item={item}/>
                 )}
             </div>
     );

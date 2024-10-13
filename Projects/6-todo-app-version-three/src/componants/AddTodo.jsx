@@ -1,8 +1,11 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import styles from "./AddTodo.module.css";
 import { MdLibraryAdd } from "react-icons/md";
+import { TodoItemContext } from "../store/todo-items-store";
 
-export function AddTodo({handleOnClick}) {
+export function AddTodo() {
+
+  const handleOnClick = useContext(TodoItemContext);
 
   const todoNameElement = useRef();
   const todoDateElement = useRef();
@@ -13,7 +16,7 @@ export function AddTodo({handleOnClick}) {
     const todoDate = todoDateElement.current.value;
     todoNameElement.current.value = '';
     todoDateElement.current.value = '';
-    handleOnClick(todoName,todoDate);
+    handleOnClick.handleOnClick(todoName,todoDate);
   }
 
   (() => {
