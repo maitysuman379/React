@@ -1,6 +1,6 @@
 import { RiDeleteBin5Fill } from "react-icons/ri";
 
-function TodoItem({ todoName, todoDate, handelDeleteItem, item}) {
+function TodoItem({ handelDeleteItem, todoDate, todoName, item}) {
 
     const handelOnClick = () =>{
         handelDeleteItem(item);
